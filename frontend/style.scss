@@ -5,15 +5,14 @@
     gap: 50px;
     justify-content: center;
     align-items: flex-start;
+    background-color: darkslategray;
+    
 
 
     section {
         width: 100%;
         max-width: 400px;
-        /* display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
- */
+  
 
 
         .days {
@@ -30,7 +29,6 @@
                 text-align: center;
                 padding: 5px 0;
                 margin-bottom: 10px;
-                display: block;
                 transition: all 0.5s ease;
 
             }
@@ -41,70 +39,92 @@
 
     .January {
         background-color: aquamarine;
-        grid-column: 1/2;
-        grid-row: 1/3;
+        padding: 10px;
+        border-radius: 15px;
+        margin-top: 20px;
+        
     }
 
     .February {
         background-color: darkgoldenrod;
-        grid-column: 2/4;
-        grid-row: 1/2;
+        padding: 10px;
+        border-radius: 15px;
+        margin-top: 20px;
+        
     }
 
     .March {
         background-color: darkviolet;
-        grid-column: 2/4;
-        grid-row: 2/3;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .April {
         background-color: chartreuse;
-        grid-column: 4/5;
-        grid-row: 1/3;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .May {
         background-color: crimson;
-        grid-column: 1/3;
-        grid-row: 4/5;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .June {
         background-color: dodgerblue;
-        grid-column: 3/5;
-        grid-row: 4/5;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .July {
         background-color: gold;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .August {
         background-color: hotpink;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .September {
         background-color: olivedrab;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .October {
         background-color: orangered;
+        padding: 10px;
+        border-radius: 15px;
     }
 
     .November {
         background-color: indianred;
+        padding: 10px;
+        border-radius: 15px;
+        margin-bottom: 20px;
     }
     .December {
         background-color: cornflowerblue;
+        padding: 10px;
+        border-radius: 15px;
+        margin-bottom: 20px;
     }
 
 
     button {
         width: 120px;
         height: 40px;
+        border-radius: 20px;
+        background: linear-gradient(45deg, rgb(143, 143, 255), rgb(247, 100, 247));
         position: fixed;
-        top: 0;
+        top: 10px;
         right: 0;
+        border: none;
+        color: bisque;
     }
 
 
@@ -125,10 +145,17 @@
 }
 
 .hidden {
-    display: none !important;
+    display: none;
 }
+
 
 .clicked {
     transform: rotate(180deg);
     
+}
+.selected-day {
+    width: 200px;
+    text-align: center;
+    font-size: 34px;
+
 }

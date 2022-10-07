@@ -113,13 +113,13 @@ const uzenet = function () {
 }
 
 buttonElement.addEventListener("click", function () {
-   /*  if (monthIndex < 12) {
-        rootElement.insertAdjacentHTML("beforeend", monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
-        monthIndex += 1;
-    } else {
-        buttonElement.setAttribute("disabled", "");
-        buttonElement.insertAdjacentHTML("beforeend", uzenet());
-    } */
+    /*  if (monthIndex < 12) {
+         rootElement.insertAdjacentHTML("beforeend", monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
+         monthIndex += 1;
+     } else {
+         buttonElement.setAttribute("disabled", "");
+         buttonElement.insertAdjacentHTML("beforeend", uzenet());
+     } */
 
 
 
@@ -130,31 +130,32 @@ buttonElement.addEventListener("click", function () {
     /* rootElement.insertAdjacentHTML("beforeend", monthComponent(1, "January", 31));
     rootElement.insertAdjacentHTML("beforeend", monthComponent(2, "February", 28));*/
 
-    for(let monthIndex = 0; monthIndex<12; monthIndex++) {
+    for (let monthIndex = 0; monthIndex < 12; monthIndex++) {
         rootElement.insertAdjacentHTML("beforeend", monthComponent(year[monthIndex].nth, year[monthIndex].month, year[monthIndex].days));
     }
-    /* initJanuaryEvents(); */
-    
-    const dayElements = document.querySelectorAll(".day");
-        /* dayElements.forEach(function (day) {
-            day.addEventListener("click", function (event) {
-                event.target.classList.toggle("clicked");
-                day.classList.toggle("clicked")
-            })
-        }) */
-    
-        for (let i = 0; i < dayElements.length; i++) {
-            dayElements[i].addEventListener("click", function () {
-                dayElements[i].classList.toggle("clicked");
-            })
-        }
+    initJanuaryEvents();
+    backDays();
+
+    /*  const dayElements = document.querySelectorAll(".day");
+         /* dayElements.forEach(function (day) {
+             day.addEventListener("click", function (event) {
+                 event.target.classList.toggle("clicked");
+                 day.classList.toggle("clicked")
+             })
+         }) */
+
+    /*  for (let i = 0; i < dayElements.length; i++) {
+         dayElements[i].addEventListener("click", function () {
+             dayElements[i].classList.toggle("clicked");
+         })
+     }  */
 })
 
 
 
 
 const hideDays = function (days) {
-    for(let day of days) {
+    for (let day of days) {
         day.classList.add("hidden");
     }
 }
@@ -163,16 +164,36 @@ const showDayInfo = function (dayIndex) {
     let selectedDay = document.querySelector(".January .selected-day");
     selectedDay.textContent = `January ${dayIndex}`
 }
+const hideDayInfo = function () {
+    let selectedDay = document.querySelector(".January .selected-day");
+    selectedDay.textContent = ``;
+}
 
-/* const initJanuaryEvents = function () {
+const initJanuaryEvents = function () {
     let days = document.querySelectorAll(".January .days .day");
-    for(let day of days) {
+    for (let day of days) {
         day.addEventListener("click", function () {
             hideDays(days);
             showDayInfo(day.textContent);
         });
-    } 
-};   */
+    }
+};
+
+const backDays = function () {
+    let card = document.querySelector(".January");
+    card.addEventListener("click", function (event) {
+        if (!event.target.classList.contains("day")) {
+            hideDayInfo();
+            let napok = document.querySelectorAll(".January .days .day");
+            for (let day of napok) {
+                day.classList.remove("hidden");
+            }
+        }
+    })
+
+
+}
+
 
 
 
